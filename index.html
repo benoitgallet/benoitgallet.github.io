@@ -5,14 +5,63 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <style>
+            body {
+                position: relative;
+            }
+            #home {padding-top: 50px; height:500px; color: #fff; background-color: #1E88E5;}
+            #about {padding-top: 50px; height:500px; color: #fff; background-color: #673ab7;}
+        </style>
     </head>
 
-    <body>
-        <div class="container">
-            <h1>First page</h1>
-            <p>This is some text</p>
-            <a href="about.html" class="btn btn-info" role="button">About</a>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle"
+                    data-toggle="collapse" data-target="#navbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Benoit Gallet</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div id="home" class="container-fluid">
+            <h1>Home</h1>
+            <p>
+                Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui. Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem quia sed. Accusantium est autem ipsam rerum.
+            </p>
+            <p>
+                Laudantium recusandae doloremque quo perspiciatis corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe accusamus rerum laborum. Sequi reiciendis quidem qui.
+            </p>
+            <p>
+                Laboriosam quaerat delectus vitae repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis autem eligendi voluptatem.
+            </p>
+            <p>
+                Ea corporis tempora fugiat iure aut quaerat. Non ipsum ullam enim in beatae. Veniam aut fugiat harum facere dicta et. Iure quis quo ducimus ut incidunt. Libero distinctio sed molestias corporis.
+            </p>
+            <p>
+                Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+            </p>
         </div>
+        <div id="about" class="container-fluid">
+            <h1>About</h1>
+            <p>
+                Mdr lol ca marche
+            </p>
+        </div>
+
     </body>
 </html>
