@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Benoit Gallet</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
+        <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <style>
+            .content {margin-top: 50px; padding-top: 25px; height: 94.6vh; color: #ffffff; }
+            #home {background-color: #1E88E5;}
+            #research {background-color: #0e2f44;}
+            #publications {background-color: #830118;}
+            #about {background-color: #673ab7;}
+            .searchable{
+                color: #000000;
+            }
+            .icon{
+                font-size: 24px;
+                margin-right: 16px;
+                color: #ffffff;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container-fluid">
+
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="">Benoit Gallet</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#research">Research</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#publications">Publications</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Contact</a>
+                        <div class="dropdown-menu">
+                            <input type="text" class="dropdown-item form-control form-control-plaintext" name="email_address" value="benoit.gallet@nau.edu" id="emailAddress2Copy" readonly>
+                            <hr>
+                            <a class="dropdown-item btn btn-primary btn-block" href="mailto:benoit.gallet@nau.edu" role="button">Send an e-mail</a>
+                            <button class="dropdown-item btn btn-block" type="button" name="button" onclick="copyEmail()">Copy e-mail address</button>
+                        </div>
+                    </li>
+
+                    <li class="nav-item icon" style="margin-left: 32px">
+                        <a href="http://www.github.com/benoitgallet" target="_blank"> <i class="fab fa-github"></i> </a>
+                    </li>
+                    <li class="nav-item icon">
+                        <a href="https://www.linkedin.com/in/benoit-gallet-a54777108" target="_blank"> <i class="fab fa-linkedin"></i> </a>
+                    </li>
+                </ul>
+            </div>
+
+            <script>
+                $('.nav-link').on('click', function(event){
+                    // if('navbardrop') != $(this).attr('id'){
+                        $('.nav-link').removeClass('active');
+                        $(this).addClass("active");
+                        var target = $(this).attr('href');
+                        $(target).tab('show');
+                        $('.tab-pane').removeClass('active');
+                        $(target).addClass('active');
+                    // }
+                });
+            </script>
+        </nav>
+
+        <script>
+            function copyEmail()
+            {
+                var copyText = document.getElementById("emailAddress2Copy");
+                copyText.select();
+                document.execCommand("copy");
+            }
+        </script>
+
+        <div class="tab-content">
+            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+            <div id="home" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container active content bg-secondary">
+                <h1>Home</h1>
+                <p class="text-justify">
+                    <br>
+                    Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui.
+                    Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem
+                    quia sed. Accusantium est autem ipsam rerum. Laudantium recusandae doloremque quo perspiciatis
+                    corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe
+                    accusamus rerum laborum. Sequi reiciendis quidem qui. Laboriosam quaerat delectus vitae
+                    repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores
+                    dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis
+                    autem eligendi voluptatem. Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis
+                    veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+                </p>
+            </div>
+
+            <div id="research" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+                <h1>Research</h1>
+                <p class="text-justify">
+                    <br>
+                    Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui.
+                    Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem
+                    quia sed. Accusantium est autem ipsam rerum. Laudantium recusandae doloremque quo perspiciatis
+                    corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe
+                    accusamus rerum laborum. Sequi reiciendis quidem qui. Laboriosam quaerat delectus vitae
+                    repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores
+                    dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis
+                    autem eligendi voluptatem. Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis
+                    veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+                </p>
+            </div>
+
+            <div id="publications" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+                <h1>Publications</h1>
+                <p class="text-justify">
+                    <br>
+                    <input class="form-control" id="publicationsSearch" type="search" placeholder="Search publications...">
+                    <br>
+                    <ul id="publicationsList" class="list-group">
+                        <ul class="list-group" style="margin-bottom: 32px;">
+                            <li class="list-group-item list-group-item-info text-center"> <strong>Peer-Reviewed Publications</strong> </li>
+                            <!--  -->
+                            <li class="list-group-item text-justify searchable">
+                                <strong>Benoit Gallet</strong>, Michael Gowanlock, Load Imbalance Mitigation Optimizations for
+                                GPU-Accelerated Similarity Joins
+                                <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank">
+                                    <span class="badge badge-primary">PDF</span>
+                                </a>
+                                <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.bib" target="_blank">
+                                    <span class="badge badge-primary">BibTex</span>
+                                </a>
+                            </li>
+                            <!--  -->
+                        </ul>
+
+                        <ul class="list-group" style="margin-bottom: 32px;">
+                            <li class="list-group-item list-group-item-info text-center"> <strong>Posters</strong> </li>
+                            <!--  -->
+                            <li class="list-group-item text-justify searchable">Benoit Gallet, HLPP</li>
+                            <!--  -->
+                        </ul>
+
+                        <ul class="list-group" style="margin-bottom: 32px;">
+                            <li class="list-group-item list-group-item-info text-center"> <strong>Scholarships</strong> </li>
+                            <!--  -->
+                            <li class="list-group-item text-justify searchable">IEEE Travel grant</li>
+                            <!--  -->
+                        </ul>
+                    </ul>
+                </p>
+
+                <script>
+                    $(document).ready(function(){
+                        $("#publicationsSearch").on("keyup", function() {
+                            var value = $(this).val().toLowerCase();
+                            $("#publicationsList .searchable").filter(function() {
+                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                            });
+                        });
+                    });
+                </script>
+            </div>
+
+            <div id="about" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+                <h1>About</h1>
+                <p class="text-justify">
+                    <br>
+                    Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui.
+                    Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem
+                    quia sed. Accusantium est autem ipsam rerum. Laudantium recusandae doloremque quo perspiciatis
+                    corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe
+                    accusamus rerum laborum. Sequi reiciendis quidem qui. Laboriosam quaerat delectus vitae
+                    repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores
+                    dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis
+                    autem eligendi voluptatem. Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis
+                    veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+                </p>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
+
+        </div>
+
+        </div>
+
+    </body>
+
+</html>
