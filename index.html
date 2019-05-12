@@ -13,11 +13,13 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
         <style>
-            .content {margin-top: 50px; padding-top: 25px; height: 94.6vh; color: #ffffff; }
-            #home {background-color: #1E88E5;}
+            .content {margin-top: 50px; padding-top: 25px; height: 94.6vh; color: #ffffff;}
+            .tab-pane {background-color: SteelBlue;}
+            /* #home {background-color: #1E88E5;}
             #research {background-color: #0e2f44;}
             #publications {background-color: #830118;}
-            #about {background-color: #673ab7;}
+            #about {background-color: #673ab7;} */
+            .dropdown-menu {width: 220px;}
             .searchable{
                 color: #000000;
             }
@@ -97,7 +99,7 @@
 
         <div class="tab-content">
             <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
-            <div id="home" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container active content bg-secondary">
+            <div id="home" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container active content ">
                 <h1>Home</h1>
                 <p class="text-justify">
                     <br>
@@ -113,7 +115,7 @@
                 </p>
             </div>
 
-            <div id="research" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+            <div id="research" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content ">
                 <h1>Research</h1>
                 <p class="text-justify">
                     <br>
@@ -129,7 +131,7 @@
                 </p>
             </div>
 
-            <div id="publications" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+            <div id="publications" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content ">
                 <h1>Publications</h1>
                 <p class="text-justify">
                     <br>
@@ -137,47 +139,49 @@
                     <br>
                     <ul id="publicationsList" class="list-group">
                         <ul class="list-group" style="margin-bottom: 32px;">
-                            <li class="list-group-item list-group-item-info text-center"> <strong>Peer-Reviewed Publications</strong> </li>
+                            <li class="list-group-item list-group-item-primary text-center"> <strong>Peer-Reviewed Publications</strong> </li>
                             <!--  -->
                             <li class="list-group-item list-group-item-action text-justify searchable">
                                 <strong>Benoit Gallet</strong>, Michael Gowanlock, Load Imbalance Mitigation Optimizations for
                                 GPU-Accelerated Similarity Joins <br>
-                                To appear in Proc. of the 2019 IEEE International Parallel and Distributed Processing Symposium Workshops
-                                (IPDPSW), Rio de Janeiro, Brazil, 2019
+                                IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop, To appear in Proc. of the 2019 IEEE International
+                                Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, Brazil, 2019
                                 <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank">
                                     <span class="badge badge-primary">Preprint</span>
                                 </a>
                                 <!-- <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.bib" target="_blank">
                                     <span class="badge badge-primary">BibTex</span>
                                 </a> -->
-                                <!-- <table class="table table-borderless">
-                                    <tr>
-                                        <td><strong>Benoit Gallet</strong>, Michael Gowanlock, Load Imbalance Mitigation Optimizations for
-                                        GPU-Accelerated Similarity Joins</td>
-                                        <td><a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank">
-                                                <span class="badge badge-primary">Preprint</span>
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>To appear in Proc. of the 2019 IEEE International Parallel and Distributed Processing Symposium Workshops
-                                             (IPDPSW), Rio de Janeiro, Brazil, 2019</td>
-                                        <td></td>
-                                    </tr>
-                                </table> -->
                             </li>
                             <!--  -->
                         </ul>
 
                         <ul class="list-group" style="margin-bottom: 32px;">
-                            <li class="list-group-item list-group-item-info text-center"> <strong>Posters</strong> </li>
+                            <li class="list-group-item list-group-item-primary text-center"> <strong>Posters</strong> </li>
                             <!--  -->
-                            <li class="list-group-item list-group-item-action text-justify searchable">Benoit Gallet, HLPP</li>
+                            <li class="list-group-item list-group-item-action text-justify searchable">
+                                <strong>Benoit Gallet</strong>, Michael Gowanlock, Optimizing GPU-Accelerated Similarity Joins Addressing Data-Dependent Workloads <br>
+                                IEEE International Parallel and Distributed Processing Symposium (IPDPS), PhD Forum, Rio de Janeiro, Brazil, 2019
+                                <a href="files/Optimizing_GPU-Accelerated_Similarity_Joins_Addressing_Data-Dependent_Workloads.pdf" target="_blank">
+                                    <span class="badge badge-primary">PDF</span>
+                                </a>
+                            </li>
                             <!--  -->
+                            <li class="list-group-item list-group-item-action text-justify searchable">
+                                <strong>Benoit Gallet</strong>, Michael Gowanlock, Exploring The Design-Space of GPU-Efficient Similarity Self-Join Kernels <br>
+                                High-Level Parallel Programming and Applications (HLPP), 11th International Symposium, Orléans, France, 2018
+                                <a href="files/Exploring_the_Design_Space_of_GPU-Efficient_Similarity_Self-Join_Kernels.pdf" target="_blank">
+                                    <span class="badge badge-primary">PDF</span>
+                                </a>
+                            </li>
                         </ul>
 
                         <ul class="list-group" style="margin-bottom: 32px;">
-                            <li class="list-group-item list-group-item-info text-center"> <strong>Awards and Scholarships</strong> </li>
+                            <li class="list-group-item list-group-item-primary text-center"> <strong>Awards and Scholarships</strong> </li>
+                            <!--  -->
+                            <li class="list-group-item list-group-item-action text-justify searchable">
+                                IEEE TCPP Travel Grant, $1,100
+                            </li>
                         </ul>
                     </ul>
                 </p>
@@ -194,7 +198,7 @@
                 </script>
             </div>
 
-            <div id="about" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content">
+            <div id="about" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content ">
                 <h1>About</h1>
                 <p class="text-justify">
                     <br>
