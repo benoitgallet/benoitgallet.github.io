@@ -3,8 +3,9 @@
     <head>
         <title>Benoit Gallet</title>
         <meta charset="utf-8">
+        <meta name="author" content="Benoit Gallet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-site-verification" content="ZDS4knIpur4RH_amJofWS03wmY-PrM6Q2I0XXBp8DeQ" />
+    	<meta name="google-site-verification" content="ZDS4knIpur4RH_amJofWS03wmY-PrM6Q2I0XXBp8DeQ" />
         <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"> -->
         <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -13,23 +14,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
         <style>
-            .content {margin-top: 50px; padding-top: 25px; height: 94.6vh; color: #ffffff;}
+            .content {margin-top: 50px; padding-top: 25px; height: 95vh; color: #ffffff;}
             .tab-pane {background-color: SteelBlue;}
-            /* #home {background-color: #1E88E5;}
-            #research {background-color: #0e2f44;}
-            #publications {background-color: #830118;}
-            #about {background-color: #673ab7;} */
             .dropdown-menu {width: 220px;}
-            .searchable{
-                color: #000000;
-            }
-            .icon{
-                font-size: 24px;
-                margin-right: 16px;
-                color: #ffffff;
-            }
+            .searchable {color: #000000;}
+            .icon {font-size: 24px; margin-right: 16px; color: #ffffff;}
+            .abstract {cursor: pointer;}
         </style>
+
+        <script>
+            function copyEmail()
+            {
+                var copyText = document.getElementById("emailAddress2Copy");
+                copyText.select();
+                document.execCommand("copy");
+            }
+        </script>
+        <script>
+            $(document).ready(function(){
+                $("#publicationsSearch").on("keyup", function() {
+                    var value = $(this).val().toLowerCase();
+                    $("#publicationsList .searchable").filter(function() {
+                        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                    });
+                });
+            });
+        </script>
     </head>
 
     <body>
@@ -67,71 +79,60 @@
                     </li>
 
                     <li class="nav-item icon" style="margin-left: 32px">
-                        <a href="http://www.github.com/benoitgallet" target="_blank"> <i class="fab fa-github"></i> </a>
+                        <a href="https://www.github.com/benoitgallet" target="_blank"> <i class="fab fa-github icon"></i> </a>
                     </li>
                     <li class="nav-item icon">
-                        <a href="https://www.linkedin.com/in/benoit-gallet-a54777108" target="_blank"> <i class="fab fa-linkedin"></i> </a>
+                        <a href="https://www.linkedin.com/in/benoit-gallet-a54777108" target="_blank"> <i class="fab fa-linkedin icon"></i> </a>
                     </li>
                 </ul>
             </div>
 
             <script>
                 $('.nav-link').on('click', function(event){
-                    // if('navbardrop') != $(this).attr('id'){
-                        $('.nav-link').removeClass('active');
-                        $(this).addClass("active");
-                        var target = $(this).attr('href');
-                        $(target).tab('show');
-                        $('.tab-pane').removeClass('active');
-                        $(target).addClass('active');
-                    // }
+                    $('.nav-link').removeClass('active');
+                    $(this).addClass("active");
+                    var target = $(this).attr('href');
+                    $(target).tab('show');
+                    $('.tab-pane').removeClass('active');
+                    $(target).addClass('active');
                 });
             </script>
-        </nav>
 
-        <script>
-            function copyEmail()
-            {
-                var copyText = document.getElementById("emailAddress2Copy");
-                copyText.select();
-                document.execCommand("copy");
-            }
-        </script>
+        </nav>
 
         <div class="tab-content">
             <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
             <div id="home" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container active content ">
                 <h1>Home</h1>
                 <p class="text-justify">
+                    Currently a PhD student in Informatics and Computing within the School of Informatics, Computing
+                    and Cyber Systems at Northern Arizona University.
+                </p>
+                <p class="text-justify">
+                    <b>Location:</b>
                     <br>
-                    <h2>Under construction</h2>
-                    <br>
-                    <img src="res/plot.png" alt="Plot de chantier" class="mx-auto d-block img-fluid">
+                    School of Informatics, Computing and Cyber Systems <a href="https://nau.edu/school-of-informatics-computing-and-cyber-systems/" target="_blank"> <i class="fas fa-external-link-alt" style="color: #ffffff"></i> </a><br>
+                    1295 S Knoles Dr<br>
+                    Flagstaff, AZ 86001<br>
+                    Cubicle #301D-6<br>
                 </p>
             </div>
 
-            <div id="research" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content ">
+            <div id="research" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container content ">
                 <h1>Research</h1>
                 <p class="text-justify">
+                    Interested in the development and the optimization of parallel applications and especially for the GPU, with an emphasis on data analysis applications (such as similarity join, kNN, clustering).
                     <br>
-                    Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui.
-                    Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem
-                    quia sed. Accusantium est autem ipsam rerum. Laudantium recusandae doloremque quo perspiciatis
-                    corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe
-                    accusamus rerum laborum. Sequi reiciendis quidem qui. Laboriosam quaerat delectus vitae
-                    repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores
-                    dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis
-                    autem eligendi voluptatem. Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis
-                    veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+                    Currently developing a hybrid (CPU + GPU) algorithm for the distance similarity self-join, exploring several approaches.
                 </p>
             </div>
 
-            <div id="publications" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content" style="height: 130vh;">
+            <div id="publications" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container content" style="height: 130vh;">
                 <h1>Publications</h1>
                 <p class="text-justify">
                     <br>
-                    <input class="form-control" id="publicationsSearch" type="search" placeholder="Search publications...">
-                    <br>
+                    <input class="form-control" id="publicationsSearch" type="search" placeholder="Search publications">
+                        <br>
                     <ul id="publicationsList" class="list-group">
                         <ul class="list-group" style="margin-bottom: 32px;">
                             <li class="list-group-item list-group-item-primary text-center"> <strong>Peer-Reviewed Publications</strong> </li>
@@ -139,7 +140,7 @@
                             <li class="list-group-item list-group-item-action text-justify searchable">
                                 <div class="d-flex flex-column">
                                     <div class="d-flex flex-row">
-                                        <h5 class="p2 mr-auto"><strong>Benoit Gallet</strong>, Michael Gowanlock</h5>
+                                        <h5 class="p2 mr-auto"><strong>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</strong></h5>
                                         <div class="p2 btn-group">
                                             <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank" class="btn btn-primary btn-sm">
                                                 PDF
@@ -147,12 +148,30 @@
                                             <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.bib" target="_blank" class="btn btn-primary btn-sm">
                                                 BibTex
                                             </a>
+                                            <a href="" target="" class="btn btn-primary btn-sm disabled">
+                                                GitHub
+                                            </a>
                                         </div>
                                     </div>
-                                    <h6 class="p2">Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</h6>
+                                    <h6 class="p2"><b>Benoit Gallet</b>, Michael Gowanlock</h6>
                                     <p class="p2">IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop, To appear in Proc. of the 2019
-                                        IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, Brazil, 2019 (<strong>Best Paper Award</strong>)
+                                        IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, Brazil, 2019 <strong>(Best Paper Award)</strong>
                                     </p>
+                                    <div class="d-flex justify-content-center abstract" data-toggle="collapse" data-target="#paper1">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="collapse" id="paper1" data-toggle="collapse" data-target="#paper1">
+                                        The distance similarity self-join is widely used in database applications and is defined as joining a table on itself using a distance predicate.
+                                        The similarity self-join is often used in spatial applications and is a building block of other algorithms, such as those used for data analysis.
+                                        In this paper, we propose several new optimizations mitigating load imbalance of a GPU-accelerated self-join algorithm. The data-dependent nature
+                                        of the self-join makes the algorithm potentially unsuitable for the GPU’s architecture, due to variance in workloads assigned to threads. Consequently,
+                                        we propose a method that reduces load imbalance and subsequent thread divergence between threads executing in a warp by considering the total workload
+                                        assigned to each thread, and forcing the GPU’s hardware scheduler to group threads with similar workloads within the same warp. Also, by leveraging a
+                                        grid-based index, we propose a new balanced computational pattern for both reducing the number of distance calculations and the workload variance between
+                                        threads. Moreover, we exploit additional parallelism by increasing the workload granularity to further improve computational throughput and workload
+                                        balance within warps. Our solution achieves a speedup of up to 9.7× and1.6× on average against another GPU algorithm, and up to 10.7× with an average of
+                                        2.5× against a CPU state-of-the-art parallel algorithm.
+                                    </div>
                                 </div>
                             </li>
                             <!--  -->
@@ -164,29 +183,38 @@
                             <li class="list-group-item list-group-item-action text-justify searchable">
                                 <div class="d-flex flex-column">
                                     <div class="d-flex flex-row">
-                                        <h5 class="p2 mr-auto"><strong>Benoit Gallet</strong>, Michael Gowanlock</h5>
+                                        <h5 class="p2 mr-auto"><strong>Optimizing GPU-Accelerated Similarity Joins Addressing Data-Dependent Workloads</strong></h5>
                                         <div class="p2 btn-group">
                                             <a href="files/Optimizing_GPU-Accelerated_Similarity_Joins_Addressing_Data-Dependent_Workloads.pdf" target="_blank" class="btn btn-primary btn-sm">
                                                 PDF
                                             </a>
                                         </div>
                                     </div>
-                                    <h6 class="p2">Optimizing GPU-Accelerated Similarity Joins Addressing Data-Dependent Workloads</h6>
+                                    <h6 class="p2"><b>Benoit Gallet</b>, Michael Gowanlock</h6>
                                     <p class="p2">IEEE International Parallel and Distributed Processing Symposium (IPDPS), PhD Forum, Rio de Janeiro, Brazil, 2019</p>
+                                    <div class="d-flex justify-content-center abstract" data-toggle="collapse" data-target="#poster2">
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="collapse" id="poster2" data-toggle="collapse" data-target="#poster2">
+                                        The  distance similarity self-join finds all pairs of objects that are within a distance ε from each other. The data-dependent nature
+                                        of this application, combined with the Single Instruction Multiple Threads (SIMT) architecture of the GPU, can lead to severe
+                                        workload imbalance between GPU threads, resulting in a loss of performance due to idle periods. We thus propose to balance
+                                        the workload by sorting the points based on their workload, and by executing the points in a specific order by using a work queue.
+                                    </div>
                                 </div>
                             </li>
                             <!--  -->
                             <li class="list-group-item list-group-item-action text-justify searchable">
                                 <div class="d-flex flex-column">
                                     <div class="d-flex flex-row">
-                                        <h5 class="p2 mr-auto"><strong>Benoit Gallet</strong>, Michael Gowanlock</h5>
+                                        <h5 class="p2 mr-auto"><strong>Exploring The Design-Space of GPU-Efficient Similarity Self-Join Kernels</strong></h5>
                                         <div class="p2 btn-group">
                                             <a href="files/Exploring_the_Design_Space_of_GPU-Efficient_Similarity_Self-Join_Kernels.pdf" target="_blank" class="btn btn-primary btn-sm">
                                                 PDF
                                             </a>
                                         </div>
                                     </div>
-                                    <h6 class="p2">Exploring The Design-Space of GPU-Efficient Similarity Self-Join Kernels</h6>
+                                    <h6 class="p2"><b>Benoit Gallet</b>, Michael Gowanlock</h6>
                                     <p class="p2">High-Level Parallel Programming and Applications (HLPP), 11th International Symposium, Orléans, France, 2018</p>
                                 </div>
                             </li>
@@ -196,7 +224,7 @@
                             <li class="list-group-item list-group-item-primary text-center"> <strong>Awards, Scholarships and More</strong> </li>
                             <!--  -->
                             <li class="list-group-item list-group-item-action text-justify searchable">
-                                <h6>Best Paper Award for our paper Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</h6>
+                                <h6>Best Paper Award for the paper <em>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</em></h6>
                                 IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop (during IPDPS'19)
                             </li>
                             <!--  -->
@@ -211,31 +239,30 @@
                     </ul>
                 </p>
 
-                <script>
-                    $(document).ready(function(){
-                        $("#publicationsSearch").on("keyup", function() {
-                            var value = $(this).val().toLowerCase();
-                            $("#publicationsList .searchable").filter(function() {
-                                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                            });
-                        });
-                    });
-                </script>
             </div>
 
-            <div id="about" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container fade content ">
+            <div id="about" class="col-lg-8 col-md-8 col-sm-10 col-xs-10 tab-pane container content ">
                 <h1>About</h1>
                 <p class="text-justify">
-                    <br>
-                    Est provident reiciendis eligendi nisi. Voluptas doloribus temporibus impedit eveniet qui.
-                    Neque ut est eaque praesentium et assumenda numquam. Ut itaque voluptate incidunt qui autem
-                    quia sed. Accusantium est autem ipsam rerum. Laudantium recusandae doloremque quo perspiciatis
-                    corrupti voluptatem. Fugiat provident consectetur aut magnam ducimus. Vel distinctio saepe
-                    accusamus rerum laborum. Sequi reiciendis quidem qui. Laboriosam quaerat delectus vitae
-                    repudiandae id id officia unde. A dolor vel sequi nihil velit assumenda. Aspernatur dolores
-                    dolores labore in sint doloribus. Aut ex rem aut a eum cum hic. Et repellendus ab nobis
-                    autem eligendi voluptatem. Nam eos ipsa temporibus ullam earum animi. Possimus omnis omnis
-                    veritatis et fuga ut. Officiis nihil dolorem magni vero et dolorem aut voluptas.
+                    <h3>Education</h3>
+                    <div class="ml-4">
+                        <dl class="">
+                            <dt>PhD in Informatics and Computing</dt>
+                            <dd>2018 - 2022</dd>
+                            <dd>Northern Arizona University, Flagstaff (USA)</dd>
+                        </dl>
+                        <dl class="">
+                            <dt>MSc in Computer Science</dt>
+                            <dd>2016 - 2018</dd>
+                            <dd>University of Orleans, Orleans (France)</dd>
+                        </dl>
+                        <dl class="">
+                            <dt>Bsc in Computer Science</dt>
+                            <dd>2013 - 2016</dd>
+                            <dd>University of Orleans, Orleans (France)</dd>
+                        </dl>
+                    </div>
+
                 </p>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1"></div>
