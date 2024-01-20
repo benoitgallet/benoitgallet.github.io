@@ -1,20 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-    <title>Benoit Gallet</title>
+<html>
+    <title>Benoît Gallet</title>
     <meta charset="UTF-8">
-    <meta name="author" content="Benoit Gallet">
+    <meta name="author" content="Benoît Gallet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">-->
-    <link rel="stylesheet" href="w3.css">
+    <link rel="stylesheet" href="res/w3.css">
+    <link rel="stylesheet" href="res/w3-theme-blue-gray.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-    <script src="jquery-3-7-0.min.js"></script>
+    <script src="res/jquery-3-7-0.min.js"></script>
     <script src="https://kit.fontawesome.com/40d2ab8024.js" crossorigin="anonymous"></script>
+
     <style>
-        body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
+        body, h1,h2,h3,h4,h5,h6, span, p, a, div, ul, li, button {font-family: "Montserrat", sans-serif}
+        hr {border: none;
+            width: 200px;
+            height: 2px;
+            color: #607d8b;
+            background-color: #607d8b;}
         .w3-row-padding img {margin-bottom: 12px}
         /* Set the width of the sidebar to 120px */
         .w3-sidebar {width: 120px;background: #222;}
+        /*.w3-bar-item:hover {background: #ff5722}*/
         /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
         #main {margin-left: 120px}
         /* Remove margins from "page content" on small screens */
@@ -25,288 +31,445 @@
         $(document).ready(function(){
             $("#publicationsSearch").on("keyup", function() {
                 const value = $(this).val().toLowerCase();
-                $("#publicationsList .searchable").filter(function() {
+                $(".searchable").filter(function() {
                     $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
             });
         });
     </script>
 
-<body class="w3-black">
+    <script>
+        function showNavbar() {
+            let x = document.getElementById("mobileNavbar");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+
+<body>
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+<nav class="w3-theme w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
     <!-- Avatar image in top left corner -->
-    <img src="/res/face_grand_canyon.jpeg" style="width:100%" class="w3-grayscale" alt="avatar">
+    <img src="/res/pp_zion.jpg" style="width:100%" alt="avatar">
 
-    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" onclick="showNavbar()" title="Toggle Navigation Menu">
+        <i class="fas fa-bars"></i>
+    </a>
+
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">
         <i class="fa fa-home w3-xxlarge"></i>
         <p>Home</p>
     </a>
-    <a href="#research" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="#research" class="w3-bar-item w3-button w3-padding-large">
         <i class="fas fa-microscope w3-xxlarge"></i>
         <p>Research</p>
     </a>
-    <a href="#school" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="#work" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fas fa-briefcase w3-xxlarge"></i>
+        <p>Experience</p>
+    </a>
+    <a href="#school" class="w3-bar-item w3-button w3-padding-large">
         <i class="fas fa-university w3-xxlarge"></i>
         <p>Education</p>
     </a>
-    <a href="#publications" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="#skills" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fas fa-code w3-xxlarge"></i>
+        <p>Skills</p>
+    </a>
+    <a href="#publications" class="w3-bar-item w3-button w3-padding-large">
         <i class="fas fa-book w3-xxlarge"></i>
         <p>Publications</p>
     </a>
-    <a href="#teaching" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-        <i class="fa-solid fa-person-chalkboard w3-xxlarge"></i>
-        <p>Teaching</p>
-    </a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+<!--    <a href="#teaching" class="w3-bar-item w3-button w3-padding-large">-->
+<!--        <i class="fa-solid fa-person-chalkboard w3-xxlarge"></i>-->
+<!--        <p>Teaching</p>-->
+<!--    </a>-->
+    <a href="#contact" class="w3-bar-item w3-button w3-padding-large">
         <i class="fa fa-envelope w3-xxlarge"></i>
         <p>Contact</p>
     </a>
-    <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button w3-padding-large">
         <i class="fab fa-github-square w3-xxlarge"></i>
         <!-- <p>GitHub</p> -->
     </a>
-    <a href="https://www.linkedin.com/in/beno%C3%AEt-gallet-a54777108/" target="_blank" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+    <a href="https://www.linkedin.com/in/beno%C3%AEt-gallet-a54777108/" target="_blank" class="w3-bar-item w3-button w3-padding-large">
         <i class="fab fa-linkedin w3-xxlarge"></i>
         <!-- <p>LinkedIn</p> -->
     </a>
 </nav>
 
+
 <!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-    <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-        <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">Home</a>
-        <a href="#research" class="w3-bar-item w3-button" style="width:25% !important">Research</a>
-        <a href="#school" class="w3-bar-item w3-button" style="width:25% !important">Education</a>
-        <a href="#publications" class="w3-bar-item w3-button" style="width:25% !important">Publications</a>
-        <a href="#teaching" class="w3-bar-item w3-button" style="width:25% !important">Teaching</a>
-        <a href="#contact" class="w3-bar-item w3-button" style="width:33% !important">Contact</a>
-        <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button" style="width:34% !important">GitHub</a>
-        <a href="https://www.linkedin.com/in/beno%C3%AEt-gallet-a54777108/" target="_blank" class="w3-bar-item w3-button" style="width:33% !important">LinkedIn</a>
-    </div>
+<div class="w3-theme w3-bar-block w3-top w3-hide w3-hide-large w3-hide-medium" id="mobileNavbar">
+<!--    <div class="w3-bar w3-opacity w3-hover-opacity-off w3-center w3-small">-->
+<!--        <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">Home</a>-->
+<!--        <a href="#research" class="w3-bar-item w3-button" style="width:25% !important">Research</a>-->
+<!--        <a href="#work" class="w3-bar-item w3-button" style="width:25% !important">Experience</a>-->
+<!--        <a href="#school" class="w3-bar-item w3-button" style="width:25% !important">Education</a>-->
+<!--        <a href="#skills" class="w3-bar-item w3-button" style="width:25% !important">Skills</a>-->
+<!--        <a href="#publications" class="w3-bar-item w3-button" style="width:25% !important">Publications</a>-->
+<!--&lt;!&ndash;        <a href="#teaching" class="w3-bar-item w3-button" style="width:25% !important">Teaching</a>&ndash;&gt;-->
+<!--        <a href="#contact" class="w3-bar-item w3-button" style="width:33% !important">Contact</a>-->
+<!--        <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button" style="width:34% !important">GitHub</a>-->
+<!--        <a href="https://www.linkedin.com/in/beno%C3%AEt-gallet-a54777108/" target="_blank" class="w3-bar-item w3-button" style="width:33% !important">LinkedIn</a>-->
+<!--    </div>-->
+    <a href="#home" class="w3-bar-item w3-button" onclick="showNavbar()">Home</a>
+    <a href="#research" class="w3-bar-item w3-button" onclick="showNavbar()">Research</a>
+    <a href="#work" class="w3-bar-item w3-button" onclick="showNavbar()">Experience</a>
+    <a href="#school" class="w3-bar-item w3-button" onclick="showNavbar()">Education</a>
+    <a href="#skills" class="w3-bar-item w3-button" onclick="showNavbar()">Skills</a>
+    <a href="#publications" class="w3-bar-item w3-button" onclick="showNavbar()">Publications</a>
+    <!--        <a href="#teaching" class="w3-bar-item w3-button" style="width:25% !important">Teaching</a>-->
+    <a href="#contact" class="w3-bar-item w3-button" onclick="showNavbar()">Contact</a>
+    <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button" onclick="showNavbar()">GitHub</a>
+    <a href="https://www.linkedin.com/in/beno%C3%AEt-gallet-a54777108/" target="_blank" class="w3-bar-item w3-button" onclick="showNavbar()">LinkedIn</a>
 </div>
 
+
 <!-- Page Content -->
-<div class="w3-padding-large" id="main">
+<div class="w3-theme-l5 w3-padding-large w3-row" id="main">
     <!-- Header/Home -->
-    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-        <h1 class="w3-jumbo">Benoit Gallet</h1>
-        <p>Postdoctoral Scholar</p>
-        <p>School of Informatics, Computing and Cyber Systems</p>
-        <p>Northern Arizona University</p>
+    <header class="w3-text-theme w3-container w3-padding-32 w3-center" id="home">
+        <h1 class="w3-jumbo">Benoît Gallet, Ph.D.</h1>
+        <h3>Postdoctoral Scholar</h3>
+        <h3>School of Informatics, Computing and Cyber Systems</h3>
+        <h3>Northern Arizona University</h3>
     </header>
+
 
     <!-- Research Section -->
     <div class="w3-padding-64 w3-content" id="research">
-        <h2 class="w3-text-light-grey">Research</h2>
-        <hr style="width:200px" class="w3-opacity">
+        <h2 class="w3-text-theme">Research</h2>
+        <hr>
 
         <div class="w3-content w3-margin-top w3-margin-left">
-            <p>Interested in High Performance Computing (HPC), parallel computing, and algorithms performance optimizations.</p>
-            <p>Working on the development and optimization of parallel applications using GPUs, and leveraging recent hardware features such as Tensor Cores.</p>
-            <p>Working on heterogeneous algorithms using simultaneously the CPU and GPU, and GPU CUDA and Tensor Cores.</p>
-            <p>Emphasis on data analysis applications such as similarity searches, kNN, or clustering.</p>
+            <p>Postdoctoral scholar in Cybersecurity and Computer Science/Ecoinformatics at Northern Arizona University.</p>
+            <p>Working on porting Number Theoretic Transform (NTT) operations to GPU Tensor Cores for the Post-Quantum Cryptography (PQC) Kyber algorithm.</p>
+            <p>Working on the data management and computing aspects of a tree water and bark beetle stress modeling and monitoring tool using satellite imagery.</p>
+            <p>Expertise in High Performance Computing (HPC), parallel computing, GPU computing, and algorithms performance optimization.</p>
+<!--            <p>Working on the development and optimization of parallel applications using GPUs, and leveraging recent hardware features such as Tensor Cores.</p>-->
+<!--            <p>Working on heterogeneous algorithms using simultaneously the CPU and GPU, and GPU CUDA and Tensor Cores.</p>-->
+<!--            <p>Emphasis on data analysis applications such as similarity searches, kNN, or clustering.</p>-->
         </div>
+    </div>
     <!-- End Research Section -->
-    </div>
 
-    <!-- Studies Section -->
+
+    <!-- Work section -->
+    <div class="w3-padding-64 w3-content" id="work">
+        <h2 class="w3-text-theme">Experience</h2>
+        <hr>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>Postdoctoral Scholar</b></span><br>
+            <span>June 2023 - Present</span><br>
+            <span>Northern Arizona University, Flagstaff, USA</span><br>
+            <div class="w3-margin-left">
+                <span>Cybersecurity</span><br>
+                <ul>
+                    <li>Porting Number Theoretic Transform (NTT) operations from the Post-Quantum Cryptography (PQC) algorithm Kyber from the CPU to GPU Tensor Cores using CUDA.</li>
+                </ul>
+            </div>
+            <div class="w3-margin-left">
+                <span>Computer Science/Ecoinformatics</span><br>
+                <ul>
+                    <li>Designing and coding an algorithm to periodically retrieve satellite image data from several providers (PlanetLabs, NASA, ESA, USGS) for the state of Arizona, using Python.</li>
+                    <li>Designing and coding an algorithm to periodically ingest newly downloaded imagery, fit data onto a grid spanning Arizona, and update a model to compute the tree water and bark beetle stresses for each pixel. Uses C++, and OpenMPI for distributed computing.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>PhD Student and Graduate Research Assistant</b></span><br>
+            <span>August 2018 - May 2023</span><br>
+            <span>Northern Arizona University, Flagstaff, USA</span><br>
+            <div class="w3-margin-left">
+                <span>Dissertation: <em>Efficient Euclidean Distance Calculations and Distance Similarity Searches: An Examination of Heterogeneous CPU, GPU and Tensor Core Architectures.</em></span><br>
+                <span>Worked on data analysis algorithms, in particular those computing similarity searches using the Euclidean distance:</span>
+                <ul>
+                    <li>Designed a heterogeneous CPU-GPU algorithm.</li>
+                    <li>Designed several GPU algorithms and optimizations.</li>
+                    <li>Designed a novel GPU algorithm using Tensor Cores.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>CS450 Instructor</b></span><br>
+            <span>May 2022 - August 2022</span><br>
+            <span>Northern Arizona University, Flagstaff, USA</span><br>
+            <div class="w3-margin-left">
+                <ul>
+                    <li>Instructor of record for the CS450 Introduction to Parallel Programming class for the Summer 2022 term.</li>
+                    <li>Taught shared memory parallelism, including pthreads and OpenMP</li>
+                    <li>Average course evaluation: 3.86 / 4.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>MSc Intern</b></span><br>
+            <span>April 2018 - September 2018</span><br>
+            <span>Université d’Orléans, Orléans, France and Northern Arizona University, Flagstaff, USA</span><br>
+            <div class="w3-margin-left">
+                <span><em>GPU Kernel Performance Optimizations for Efficient Similarity Joins.</em></span>
+                <ul>
+                    <li>Proposed several optimizations for a GPU distance similarity searches algorithm.</li>
+                    <li>Initial work for my dissertation, worked with Dr. Michael Gowanlock at Northern Arizona University.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>BSc Intern</b></span><br>
+            <span>April 2016 - June 2016</span><br>
+            <span>Université d’Orléans and National Center for Scientific Research, Orléans, France</span><br>
+            <div class="w3-margin-left">
+                <span><em>GPU Detection of Pulse Radio Signals.</em></span>
+                <ul>
+                    <li>Cleaning and formatting of an existing sequential CPU code in C detecting pulse radio signals from neutron stars.</li>
+                    <li>Porting the original code to the GPU using CUDA.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Work Section -->
+
+
+    <!-- Education Section -->
     <div class="w3-padding-64 w3-content" id="school">
-        <h2 class="w3-text-light-grey">Education</h2>
-        <hr style="width:200px" class="w3-opacity">
+        <h2 class="w3-text-theme">Education</h2>
+        <hr>
 
         <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large">PhD - Informatics and Computing (August 2018 - May 2023)</span><br>
-            <span>Northern Arizona University, United States</span><br>
-            <h5 class="w3-margin-left">-&nbsp;Efficient Euclidean Distance Calculations and Distance Similarity Searches: An Examination of Heterogeneous CPU, GPU and Tensor Core Architectures</h5>
-            <span class="w3-margin-left">-&nbsp;Supervised by <a href="https://jan.ucc.nau.edu/mg2745/" target="_blank">Dr. Michael Gowanlock</a></span><br>
-            <span class="w3-margin-left">-&nbsp; Worked as Graduate Research Assistant</span><br>
-            <a href="files/dissertation_benoit_gallet.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">Dissertation</a>
+            <span class="w3-large"><b>PhD - Informatics and Computing </b></span><br>
+            <span>Northern Arizona University, Flagstaff, USA</span><br>
+            <span>August 2018 - May 2023</span><br>
+            <h6 class="w3-margin-left">Efficient Euclidean Distance Calculations and Distance Similarity Searches: An Examination of Heterogeneous CPU, GPU and Tensor Core Architectures</h6>
+            <ul>
+                <li>Supervised by <a href="https://jan.ucc.nau.edu/mg2745/" target="_blank">Dr. Michael Gowanlock</a></li>
+                <li>Worked as Graduate Research Assistant</li>
+            </ul>
+            <a href="files/dissertation_benoit_gallet.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">Dissertation</a>
         </div>
         <br>
         <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large">MSc - Comupter Science (September 2016 - September 2018)</span><br>
-            <span>Université d'Orléans, France</span>
+            <span class="w3-large"><b>MSc - Computer Science</b></span><br>
+            <span>Université d'Orléans, Orléans, France</span><br>
+            <span>September 2016 - September 2018</span><br>
+            <ul>
+                <li>Minor in Nomadism, Intelligence and Security</li>
+                <li>With Honors</li>
+            </ul>
         </div>
         <br>
         <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large">BSc - Computer Science (September 2013 - June 2016)</span><br>
-            <span>Université d'Orléans, France</span>
+            <span class="w3-large"><b>BSc - Computer Science</b></span><br>
+            <span>September 2013 - June 2016</span><br>
+            <span>Université d'Orléans, Orléans, France</span>
         </div>
-    <!-- End Studies Section -->
     </div>
+    <!-- End Education Section -->
+
+
+    <!-- Skills section -->
+    <div class="w3-padding-64 w3-content" id="skills">
+        <h2 class="w3-text-theme">Skills</h2>
+        <hr>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>Programming Languages</b></span><br>
+            <ul>
+                <li>C</li>
+                <li>C++</li>
+                <li>Python</li>
+            </ul>
+        </div>
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <span class="w3-large"><b>Libraries</b></span><br>
+            <ul>
+                <li>CUDA</li>
+                <li>OpenMP</li>
+                <li>OpenMPI</li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Skills Section -->
+
 
     <!-- Publications Section -->
     <div class="w3-padding-64 w3-content" id="publications">
-        <h2 class="w3-text-light-grey">Publications</h2>
-        <hr style="width:200px" class="w3-opacity">
+        <h2 class="w3-text-theme">Publications</h2>
+        <hr>
 
         <div class="w3-row-padding w3-margin-left">
             <input class="w3-input w3-padding w3-animate-input" type="search" placeholder="Filter Publications" id="publicationsSearch" style="width: 33%">
         </div>
 
-        <div class="w3-row-padding w3-margin-left">
-            <ul id="publicationsList" class="w3-ul">
+        <div class="w3-row-padding w3-margin-left w3-margin-top">
 
-                <!--  -->
+            <span class="w3-xlarge x3-margin-top">Peer-Reviewed Publications (6)</span><br>
+            <ol class="w3-border">
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Optimization and Comparison of Coordinate- and Metric-Based Indexes on GPUs for Distance Similarity Searches</b></span><br>
+                        <span>Michael Gowanlock, <b>Benoit Gallet</b>, Brian Donnelly</span>
+                        <p>Proceedings of the International Conference on Computational Science (ICCS), Prague, Czech Republic, July 2023</p>
+                        <a href="files/Gowanlock_ICCS2023.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://doi.org/10.1007/978-3-031-36021-3_37" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                    </div>
+                </li>
 
-                <br>
-                <div class="w3-xlarge w3-margin-top">Peer-Reviewed Publications</div>
-                <ul class="w3-ul w3-border">
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Leveraging GPU Tensor Cores for Double Precision Euclidean Distance Calculations</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>Proceedings of the 29th IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC), Bengaluru, India, December 2022</p>
+                        <a href="files/Leveraging_GPU_Tensor_Cores_for_Double_Precision_Euclidean_Distance_Calculations.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://github.com/benoitgallet/ted-join-hipc22" target="_blank" class="w3-bar-item w3-button w3-theme-action">GitHub</a>
+                        <a href="https://doi.org/10.1109/HiPC56025.2022.00029" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                    </div>
+                </li>
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>Optimization and Comparison of Coordinate- and Metric-Based Indexes on GPUs for Distance Similarity Searches</b></span><br>
-                            <span>Michael Gowanlock, <b>Benoit Gallet</b>, Brian Donnelly</span>
-                            <p>Proceedings of the International Conference on Computational Science (ICCS), Prague, Czech Republic, July 2023</p>
-                            <a href="files/Gowanlock_ICCS2023.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://doi.org/10.1007/978-3-031-36021-3_37" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                        </div>
-                    </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Data-Intensive Computing Modules for Teaching Parallel and Distributed Computing</b></span><br>
+                        <span>Michael Gowanlock, <b>Benoit Gallet</b></span>
+                        <p>11th NSF/TCPP Workshop on Parallel and Distributed Computing Education<br>
+                            Proceedings of the IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)</p>
+                        <a href="files/Data-Intensive_Computing_Modules_Teaching_Parallel_Distributed_Computing.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://doi.org/10.1109/IPDPSW52791.2021.00062" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                    </div>
+                </li>
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>Leveraging GPU Tensor Cores for Double Precision Euclidean Distance Calculations</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>Proceedings of the 29th IEEE International Conference on High Performance Computing, Data, and Analytics (HiPC), Bengaluru, India, December 2022</p>
-                            <a href="files/Leveraging_GPU_Tensor_Cores_for_Double_Precision_Euclidean_Distance_Calculations.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://github.com/benoitgallet/ted-join-hipc22" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">GitHub</a>
-                            <a href="https://doi.org/10.1109/HiPC56025.2022.00029" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                        </div>
-                    </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Heterogeneous CPU-GPU Epsilon Grid Joins: Static and Dynamic Work Partitioning Strategies</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>Data Science and Engineering, October 2020</p>
+                        <a href="files/Heterogeneous_CPU-GPU_Epsilon_Grid_Joins-Static_and_Dynamic_Work_Partitioning_Strategies.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://doi.org/10.1007/s41019-020-00145-x" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                        <a href="https://github.com/benoitgallet/HEGJoin" target="_blank" class="w3-bar-item w3-button w3-theme-action">GitHub</a>
+                    </div>
+                </li>
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>Data-Intensive Computing Modules for Teaching Parallel and Distributed Computing</b></span><br>
-                            <span>Michael Gowanlock, <b>Benoit Gallet</b></span>
-                            <p>11th NSF/TCPP Workshop on Parallel and Distributed Computing Education<br>
-                                Proceedings of the IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW)</p>
-                            <a href="files/Data-Intensive_Computing_Modules_Teaching_Parallel_Distributed_Computing.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://doi.org/10.1109/IPDPSW52791.2021.00062" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                        </div>
-                    </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>HEGJoin: Heterogeneous CPU-GPU Epsilon Grids for Accelerated Distance Similarity Join</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>Proceedings of the 25th International Conference on Database Systems for Advanced Applications (DASFAA), Jeju, South Korea, September 2020</p>
+                        <a href="files/HEGJoin_Heterogeneous_CPU_GPU_Epsilon_Grids.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://doi.org/10.1007/978-3-030-59419-0_23" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                        <a href="https://github.com/benoitgallet/HEGJoin" target="_blank" class="w3-bar-item w3-button w3-theme-action">GitHub</a>
+                    </div>
+                </li>
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>Heterogeneous CPU-GPU Epsilon Grid Joins: Static and Dynamic Work Partitioning Strategies</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>Data Science and Engineering, October 2020</p>
-                            <a href="files/Heterogeneous_CPU-GPU_Epsilon_Grid_Joins-Static_and_Dynamic_Work_Partitioning_Strategies.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://doi.org/10.1007/s41019-020-00145-x" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                            <a href="https://github.com/benoitgallet/HEGJoin" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">GitHub</a>
-                        </div>
-                    </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop (HPBDC)<br>
+                            Proceedings of the 2019 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, Brazil, May 2019 <strong>(Best Paper Award)</strong></p>
+                        <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                        <a href="https://doi.org/10.1109/IPDPSW.2019.00078" target="_blank" class="w3-bar-item w3-button w3-theme-action">DOI</a>
+                        <a href="https://github.com/benoitgallet/self-join-hpbdc2019" target="_blank" class="w3-bar-item w3-button w3-theme-action">GitHub</a>
+                    </div>
+                </li>
+            </ol>
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>HEGJoin: Heterogeneous CPU-GPU Epsilon Grids for Accelerated Distance Similarity Join</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>Proceedings of the 25th International Conference on Database Systems for Advanced Applications (DASFAA), Jeju, South Korea, September 2020</p>
-                            <a href="files/HEGJoin_Heterogeneous_CPU_GPU_Epsilon_Grids.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://doi.org/10.1007/978-3-030-59419-0_23" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                            <a href="https://github.com/benoitgallet/HEGJoin" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">GitHub</a>
-                        </div>
-                    </li>
+            <!--  -->
 
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-large"><b>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop (HPBDC)<br>
-                                Proceedings of the 2019 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, Brazil, May 2019 <strong>(Best Paper Award)</strong></p>
-                            <a href="files/Load_Imbalance_Mitigation_Optimizations_for_GPU-Accelerated_Similarity_Joins.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                            <a href="https://doi.org/10.1109/IPDPSW.2019.00078" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">DOI</a>
-                            <a href="https://github.com/benoitgallet/self-join-hpbdc2019" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">GitHub</a>
-                        </div>
-                    </li>
-                </ul>
+            <br>
+<!--            <div class="w3-xlarge w3-margin-top">Posters (2)</div>-->
+            <span class="w3-xlarge x3-margin-top">Posters (2)</span><br>
+            <ol class="w3-border ">
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class=w3-large><b>Optimizing GPU-Accelerated Similarity Joins Addressing Data-Dependent Workloads</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>IEEE International Parallel and Distributed Processing Symposium (IPDPS), PhD Forum, Rio de Janeiro, Brazil, 2019</p>
+                        <a href="files/Optimizing_GPU-Accelerated_Similarity_Joins_Addressing_Data-Dependent_Workloads.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                    </div>
+                </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class=w3-large><b>Exploring The Design-Space of GPU-Efficient Similarity Self-Join Kernels</b></span><br>
+                        <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
+                        <p>High-Level Parallel Programming and Applications (HLPP), 11th International Symposium, Orléans, France, 2018</p>
+                        <a href="files/Exploring_the_Design_Space_of_GPU-Efficient_Similarity_Self-Join_Kernels.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">PDF</a>
+                    </div>
+                </li>
+            </ol>
 
-                <!--  -->
+            <!--  -->
 
-                <br>
-                <div class="w3-xlarge w3-margin-top">Posters</div>
-                <ul class="w3-ul w3-border">
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class=w3-large><b>Optimizing GPU-Accelerated Similarity Joins Addressing Data-Dependent Workloads</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>IEEE International Parallel and Distributed Processing Symposium (IPDPS), PhD Forum, Rio de Janeiro, Brazil, 2019</p>
-                            <a href="files/Optimizing_GPU-Accelerated_Similarity_Joins_Addressing_Data-Dependent_Workloads.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                        </div>
-                    </li>
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class=w3-large><b>Exploring The Design-Space of GPU-Efficient Similarity Self-Join Kernels</b></span><br>
-                            <span><b>Benoit Gallet</b>, Michael Gowanlock</span>
-                            <p>High-Level Parallel Programming and Applications (HLPP), 11th International Symposium, Orléans, France, 2018</p>
-                            <a href="files/Exploring_the_Design_Space_of_GPU-Efficient_Similarity_Self-Join_Kernels.pdf" target="_blank" class="w3-bar-item w3-button w3-dark-gray w3-hover-light-gray">PDF</a>
-                        </div>
-                    </li>
-                </ul>
-
-                <!--  -->
-
-                <br>
-                <div class="w3-xlarge w3-margin-top">Awards and Other</div>
-                <ul class="w3-ul w3-border">
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span class="w3-xlarge">Best Paper Award</span><br>
-                            <span>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</span><br>
-                            <span>IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop (during IPDPS'19)</span>
-                        </div>
-                    </li>
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span>IEEE TCPP Travel Grant, $1,100</span>
-                        </div>
-                    </li>
-                    <li class="w3-bar searchable w3-justify">
-                        <div class="w3-bar-item">
-                            <span>Selected for the IEEE IPDPS'19 PhD Forum</span>
-                        </div>
-                    </li>
-                </ul>
-
-                <!--  -->
-
+            <br>
+<!--            <div class="w3-xlarge w3-margin-top">Awards and Other</div>-->
+            <span class="w3-xlarge x3-margin-top">Awards and Other</span><br>
+            <ul class="w3-ul w3-border">
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span class="w3-large"><b>Best Paper Award</b></span><br>
+                        <span>Load Imbalance Mitigation Optimizations for GPU-Accelerated Similarity Joins</span><br>
+                        <span>IEEE High-Performance Big Data, Deep Learning, and Cloud Computing Workshop (during IPDPS'19)</span>
+                    </div>
+                </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span>IEEE TCPP Travel Grant, $1,100</span>
+                    </div>
+                </li>
+                <li class="w3-bar searchable w3-justify">
+                    <div class="w3-bar-item">
+                        <span>Selected for the IEEE IPDPS'19 PhD Forum</span>
+                    </div>
+                </li>
             </ul>
         </div>
     </div>
+    <!-- End Publications Section -->
 
-    <!-- Teaching Section -->
-    <div class="w3-padding-64 w3-content" id="teaching">
-        <h2 class="w3-text-light-grey">Teaching</h2>
-        <hr style="width:200px" class="w3-opacity">
+<!--    &lt;!&ndash; Teaching Section &ndash;&gt;-->
+<!--    <div class="w3-padding-64 w3-content" id="teaching">-->
+<!--        <h2>Teaching</h2>-->
+<!--        <hr style="width:200px" class="w3-opacity">-->
 
-        <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large">June 2022 - August 2022</span><br>
-            <span class=" w3-large w3-margin-left">-&nbsp;Main instructor for the CS450 Introduction to Parallel Programming class (undergraduate level)</span><br>
-            <span class="w3-margin-left">-&nbsp;Northern Arizona University, United States</span>
-        </div>
-        <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large">August 2022</span><br>
-            <span class="w3-large w3-margin-left">-&nbsp;Personalised Learning course developer for the CS550 Introduction to Parallel Programming class (graduate level)</span><br>
-            <span class="w3-margin-left">-&nbsp;Northern Arizona University, United States</span>
-        </div>
-        <!-- End Teaching Section -->
-    </div>
+<!--        <div class="w3-content w3-margin-top w3-margin-left">-->
+<!--            <span class="w3-large">June 2022 - August 2022</span><br>-->
+<!--            <span class=" w3-large w3-margin-left">Main instructor for the CS450 Introduction to Parallel Programming class (undergraduate level)</span><br>-->
+<!--            <span class="w3-margin-left">Northern Arizona University, United States</span>-->
+<!--        </div>-->
+<!--        <div class="w3-content w3-margin-top w3-margin-left">-->
+<!--            <span class="w3-large">August 2022</span><br>-->
+<!--            <span class="w3-large w3-margin-left">Personalised Learning course developer for the CS550 Introduction to Parallel Programming class (graduate level)</span><br>-->
+<!--            <span class="w3-margin-left">Northern Arizona University, United States</span>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; End Teaching Section &ndash;&gt;-->
+<!--    </div>-->
+
 
     <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-        <h2 class="w3-text-light-grey">Contact</h2>
-        <hr style="width:200px" class="w3-opacity">
+    <div class="w3-padding-64 w3-content" id="contact">
+        <h2 class="w3-text-theme">Contact</h2>
+        <hr>
 
         <div class="w3-section w3-margin-left">
             <div class="w3-bar">
                 <div class="w3-bar-item">
-                    <a href="https://nau.edu/school-of-informatics-computing-and-cyber-systems/" target="_blank">
-                        <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
-                    </a>
+                    <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>
+<!--                    <a href="https://nau.edu/school-of-informatics-computing-and-cyber-systems/" target="_blank">-->
+<!--&lt;!&ndash;                        <i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>&ndash;&gt;-->
+<!--                        <i class="fa-solid fa-link"></i>-->
+<!--                    </a>-->
                 </div>
                 <div class="w3-bar-item">
-                    School of Informatics, Computing and Cyber Systems<br>
+                    <a href="https://nau.edu/school-of-informatics-computing-and-cyber-systems/" target="_blank">
+                        School of Informatics, Computing and Cyber Systems<br>
+                    </a>
                     1295 S Knoles Dr<br>
                     Flagstaff, AZ, United States<br>
                     Cubicle #301E-4
@@ -321,17 +484,18 @@
                 </div>
             </div>
         </div>
-    <!-- End Contact Section -->
+        <!-- End Contact Section -->
     </div>
+
 
     <!-- Footer -->
     <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
         <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-    <!-- End footer -->
+        <!-- End footer -->
     </footer>
 
-<!-- END PAGE CONTENT -->
 </div>
+<!-- Main content -->
 
 </body>
 </html>
