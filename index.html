@@ -65,8 +65,12 @@
         <p>Home</p>
     </a>
     <a href="#research" class="w3-bar-item w3-button w3-padding-large">
-        <i class="fas fa-microscope w3-xxlarge"></i>
+        <i class="fas fa-circle-info w3-xxlarge"></i>
         <p>About</p>
+    </a>
+    <a href="#skills" class="w3-bar-item w3-button w3-padding-large">
+        <i class="fas fa-code w3-xxlarge"></i>
+        <p>Skills</p>
     </a>
     <a href="#work" class="w3-bar-item w3-button w3-padding-large">
         <i class="fas fa-briefcase w3-xxlarge"></i>
@@ -76,18 +80,10 @@
         <i class="fas fa-university w3-xxlarge"></i>
         <p>Education</p>
     </a>
-    <a href="#skills" class="w3-bar-item w3-button w3-padding-large">
-        <i class="fas fa-code w3-xxlarge"></i>
-        <p>Skills</p>
-    </a>
     <a href="#publications" class="w3-bar-item w3-button w3-padding-large">
         <i class="fas fa-book w3-xxlarge"></i>
         <p>Publications</p>
     </a>
-<!--    <a href="#teaching" class="w3-bar-item w3-button w3-padding-large">-->
-<!--        <i class="fa-solid fa-person-chalkboard w3-xxlarge"></i>-->
-<!--        <p>Teaching</p>-->
-<!--    </a>-->
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large">
         <i class="fa fa-envelope w3-xxlarge"></i>
         <p>Contact</p>
@@ -119,11 +115,10 @@
 <!--    </div>-->
     <a href="#home" class="w3-bar-item w3-button" onclick="showNavbar()">Home</a>
     <a href="#research" class="w3-bar-item w3-button" onclick="showNavbar()">About</a>
+    <a href="#skills" class="w3-bar-item w3-button" onclick="showNavbar()">Skills</a>
     <a href="#work" class="w3-bar-item w3-button" onclick="showNavbar()">Experience</a>
     <a href="#school" class="w3-bar-item w3-button" onclick="showNavbar()">Education</a>
-    <a href="#skills" class="w3-bar-item w3-button" onclick="showNavbar()">Skills</a>
     <a href="#publications" class="w3-bar-item w3-button" onclick="showNavbar()">Publications</a>
-    <!--        <a href="#teaching" class="w3-bar-item w3-button" style="width:25% !important">Teaching</a>-->
     <a href="#contact" class="w3-bar-item w3-button" onclick="showNavbar()">Contact</a>
     <a href="https://www.github.com/benoitgallet" target="_blank" class="w3-bar-item w3-button" onclick="showNavbar()">GitHub</a>
     <a href="https://www.linkedin.com/in/benoitgallet/" target="_blank" class="w3-bar-item w3-button" onclick="showNavbar()">LinkedIn</a>
@@ -141,26 +136,46 @@
     </header>
 
 
-    <!-- Research Section -->
+    <!-- About Section -->
     <div class="w3-padding-64 w3-content" id="research">
         <h2 class="w3-text-theme">About</h2>
         <hr>
 
         <div class="w3-content w3-margin-top w3-margin-left">
             <p>Postdoctoral scholar in Cybersecurity and Computer Science/Ecoinformatics at Northern Arizona University.</p>
-            <p>Working on porting Number Theoretic Transform (NTT) operations to GPU Tensor Cores for the Post-Quantum Cryptography (PQC) Kyber algorithm.</p>
-            <p>Working on the data management and computing aspects of a tree water and bark beetle stress modeling and monitoring tool using satellite imagery.</p>
-            <p>Expertise in High Performance Computing (HPC), parallel computing, GPU computing, and algorithms performance optimization.</p>
-<!--            <p>Working on the development and optimization of parallel applications using GPUs, and leveraging recent hardware features such as Tensor Cores.</p>-->
-<!--            <p>Working on heterogeneous algorithms using simultaneously the CPU and GPU, and GPU CUDA and Tensor Cores.</p>-->
-<!--            <p>Emphasis on data analysis applications such as similarity searches, kNN, or clustering.</p>-->
+            <p>Cybersecurity: Porting Number Theoretic Transform (NTT) operations to GPU Tensor Cores for the Post-Quantum Cryptography (PQC) Kyber algorithm.</p>
+            <p>Ecoinformatics: Modelling tree water and bark beetle stresses using satellite imagery for the state of Arizona, in charge of the large-scale computing aspect.</p>
+            <p>Expertise in High Performance Computing (HPC), parallel and GPU computing, and algorithm optimizations.</p>
+            <p>Interested in data science and machine learning, familiar with TensorFlow and Keras.</p>
+            <p><em>Looking for job, willing to relocate.</em></p>
+            <p><em>F1 STEM OPT since June 2023, can be extended to Summer 2026.</em></p>
         </div>
         <div class="w3-content w3-margin-top w3-margin-left">
             <a href="files/CV_Benoit_Gallet_short.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">CV (Short)</a>
             <a href="files/CV_Benoit_Gallet_long.pdf" target="_blank" class="w3-bar-item w3-button w3-theme-action">CV (Full)</a>
         </div>
     </div>
-    <!-- End Research Section -->
+    <!-- End About Section -->
+
+
+
+    <!-- Skills section -->
+    <div class="w3-padding-64 w3-content" id="skills">
+        <h2 class="w3-text-theme">Skills</h2>
+        <hr>
+
+        <div class="w3-content w3-margin-top w3-margin-left">
+            <ul>
+                <li>Proficient with C, C++, Python, CUDA, OpenMP, OpenMPI</li>
+                <li>Familiar with Tensorflow and Keras</li>
+                <li>High-performance computing, parallel and GPU computing, algorithms, data structures, data analysis and clustering algorithms, algorithm optimizations.</li>
+                <li>Conducting research, presenting, public speaking.</li>
+                <li>French (native), English (bilingual), German (basic)</li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Skills Section -->
+
 
 
     <!-- Work section -->
@@ -175,14 +190,15 @@
             <div class="w3-margin-left">
                 <span>Cybersecurity</span><br>
                 <ul>
-                    <li>Porting Number Theoretic Transform (NTT) operations from the Post-Quantum Cryptography (PQC) algorithm Kyber from the CPU to GPU Tensor Cores using CUDA.</li>
+                    <li>Porting and optimizing Number Theoretic Transform (NTT) operations of the Post-Quantum Cryptography (PQC) algorithm Kyber from the CPU to GPU Tensor Cores using CUDA.</li>
                 </ul>
             </div>
             <div class="w3-margin-left">
                 <span>Computer Science/Ecoinformatics</span><br>
                 <ul>
-                    <li>Designing and coding an algorithm to periodically retrieve satellite image data from several providers (PlanetLabs, NASA, ESA, USGS) for the state of Arizona, using Python.</li>
-                    <li>Designing and coding an algorithm to periodically ingest newly downloaded imagery, fit data onto a grid spanning Arizona, and update a model to compute the tree water and bark beetle stresses for each pixel. Uses C++, and OpenMPI for distributed computing.</li>
+                    <li>Part of a multi-disciplinary team, focusing on the scalability and performance of the project.</li>
+                    <li>Designing and developing an algorithm to periodically retrieve satellite images for the state of Arizona and from multiple sources (PlanetLabs, USGS, NASA, and ESA), using Python.</li>
+                    <li>Designing and developing an algorithm to periodically process new imagery, modeling and computing the trees water and bark beetle stresses of up to <em>40B</em> pixels. Uses C++, and MPI for distributed computing and scalability.</li>
                 </ul>
             </div>
         </div>
@@ -193,23 +209,23 @@
             <span>Northern Arizona University, Flagstaff, USA</span><br>
             <div class="w3-margin-left">
                 <span>Dissertation: <em>Efficient Euclidean Distance Calculations and Distance Similarity Searches: An Examination of Heterogeneous CPU, GPU and Tensor Core Architectures.</em></span><br>
-                <span>Worked on data analysis algorithms, in particular those computing similarity searches using the Euclidean distance:</span>
+                <span>Worked on data analysis and clustering algorithms, with an emphasis on similarity searches and Euclidean distance calculations:</span>
                 <ul>
-                    <li>Designed a heterogeneous CPU-GPU algorithm.</li>
-                    <li>Designed several GPU algorithms and optimizations.</li>
-                    <li>Designed a novel GPU algorithm using Tensor Cores.</li>
+                    <li>Developed GPU workload balancing optimizations (up to 9.7x speedup over prior GPU solution).</li>
+                    <li>Developed a heterogeneous CPU-GPU algorithm (up to 5.5x speedup over prior GPU solution).</li>
+                    <li>Developed a GPU algorithm using double precision Tensor Cores (up to 2.2x speedup over prior GPU solution).</li>
                 </ul>
             </div>
         </div>
 
         <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large"><b>CS450 Instructor</b></span><br>
+            <span class="w3-large"><b>CS Instructor</b></span><br>
             <span>May 2022 - August 2022</span><br>
             <span>Northern Arizona University, Flagstaff, USA</span><br>
             <div class="w3-margin-left">
                 <ul>
-                    <li>Instructor of record for the CS450 Introduction to Parallel Programming class for the Summer 2022 term.</li>
-                    <li>Taught shared memory parallelism, including pthreads and OpenMP</li>
+                    <li>Instructor of record for the CS450 Introduction to Parallel Programming class.</li>
+                    <li>Taught shared memory parallelism, including pthreads, OpenMP, and vectorization.</li>
                     <li>Average course evaluation: 3.86 / 4.</li>
                 </ul>
             </div>
@@ -222,8 +238,7 @@
             <div class="w3-margin-left">
                 <span><em>GPU Kernel Performance Optimizations for Efficient Similarity Joins.</em></span>
                 <ul>
-                    <li>Proposed several optimizations for a GPU distance similarity searches algorithm.</li>
-                    <li>Initial work for my dissertation, worked with Dr. Michael Gowanlock at Northern Arizona University.</li>
+                    <li>Proposed several optimizations for a GPU distance similarity searches algorithm using CUDA.</li>
                 </ul>
             </div>
         </div>
@@ -235,13 +250,13 @@
             <div class="w3-margin-left">
                 <span><em>GPU Detection of Pulse Radio Signals.</em></span>
                 <ul>
-                    <li>Cleaning and formatting of an existing sequential CPU code in C detecting pulse radio signals from neutron stars.</li>
-                    <li>Porting the original code to the GPU using CUDA.</li>
+                    <li>Ported C code detecting pulse radio signals from neutron stars with a radio telescope and using FFTs to the GPU using CUDA.</li>
                 </ul>
             </div>
         </div>
     </div>
     <!-- End Work Section -->
+
 
 
     <!-- Education Section -->
@@ -279,30 +294,6 @@
     </div>
     <!-- End Education Section -->
 
-
-    <!-- Skills section -->
-    <div class="w3-padding-64 w3-content" id="skills">
-        <h2 class="w3-text-theme">Skills</h2>
-        <hr>
-
-        <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large"><b>Programming Languages</b></span><br>
-            <ul>
-                <li>C</li>
-                <li>C++</li>
-                <li>Python</li>
-            </ul>
-        </div>
-        <div class="w3-content w3-margin-top w3-margin-left">
-            <span class="w3-large"><b>Libraries</b></span><br>
-            <ul>
-                <li>CUDA</li>
-                <li>OpenMP</li>
-                <li>OpenMPI</li>
-            </ul>
-        </div>
-    </div>
-    <!-- End Skills Section -->
 
 
     <!-- Publications Section -->
@@ -456,6 +447,7 @@
 <!--    </div>-->
 
 
+
     <!-- Contact Section -->
     <div class="w3-padding-64 w3-content" id="contact">
         <h2 class="w3-text-theme">Contact</h2>
@@ -481,11 +473,13 @@
                 </div>
                 <div class="w3-bar-item">
                     <a href="mailto:benoit.gallet@nau.edu" role="button">benoit.gallet@nau.edu</a>
+                    <a href="mailto:b.gallet45@gmail.com" role="button">b.gallet45@gmail.com</a>
                 </div>
             </div>
         </div>
         <!-- End Contact Section -->
     </div>
+
 
 
     <!-- Footer -->
